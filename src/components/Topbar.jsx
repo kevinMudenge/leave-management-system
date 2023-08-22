@@ -1,6 +1,6 @@
 import {Box, IconButton, Typography, useTheme} from "@mui/material";
 import {useContext, useState} from "react";
-import {ColorModeContext, tokens} from "../../theme";
+import {ColorModeContext, tokens} from "../theme";
 import {InputBase, Tooltip, Popover, Avatar} from "@mui/material";
 import {Menu, Button, MenuItem} from "@mui/material";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
@@ -12,7 +12,7 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import RoomPreferencesOutlinedIcon from '@mui/icons-material/RoomPreferencesOutlined';
 import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
-import Logo from '../../assets/logo.svg';
+import Logo from '../assets/logo.svg';
 
 function MouseOverPopover() {
   
@@ -75,15 +75,24 @@ const Topbar=() =>{
     const colors= tokens(theme.palette.mode);
   
     const colorMode = useContext(ColorModeContext);
+    const [search, setSearch]= useState(false)
 
     const [anchorEl, setAnchorEl] = useState(null);
+  
     const open = Boolean(anchorEl);
+
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
+
     const handleClose = () => {
       setAnchorEl(null);
     };
+
+    const handleSearch = () => {
+      setSearch(! search);
+    };
+  
 
     return <Box display="flex" justifyContent="space-between" p={2}>
      <Box display="flex" alignItems="center">
@@ -110,8 +119,8 @@ const Topbar=() =>{
         justifyContent="space-between" 
         backgroundColor={colors.primary[400]} borderRadius="3px"
         >
-          <InputBase sx={{ ml: 2, flex: 1}} placeholder="Search"/>
-          <IconButton type="button" sx={{p: 1}}>
+          {search && (<InputBase sx={{ ml: 2, flex: 1}} placeholder="Search"/>)}
+          <IconButton type="button" sx={{p: 1}} onClick={handleSearch}>
             <SearchOutlinedIcon/>
           </IconButton>
         </Box>
