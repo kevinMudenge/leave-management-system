@@ -1,24 +1,26 @@
-import {ColorModeContext, useMode} from "../src/theme";
+import { BrowserRouter } from 'react-router-dom';
+
 import {CssBaseline, ThemeProvider} from "@mui/material"
-import {Routes, Route} from "react-router-dom";
-import Login from "./scenes/auth/Login";
+
+import {ColorModeContext, useMode} from "../src/theme";
+import Router from './routes';
+
+
+
 
 function App(){
   const [theme, colorMode] = useMode();
 
   return (
-  <ColorModeContext.Provider value={colorMode}>
-    <ThemeProvider theme={theme}>
-    <CssBaseline />
-    <div className="app">
-      <main className="content">
-        <Routes>
-          <Route path="/" element={<Login />}/>
-        </Routes>
-      </main>
-    </div>
-    </ThemeProvider>
+    <ColorModeContext.Provider value={colorMode}>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router />
+        </ThemeProvider>
+      </BrowserRouter>
     </ColorModeContext.Provider>
+
   )
 }
 
