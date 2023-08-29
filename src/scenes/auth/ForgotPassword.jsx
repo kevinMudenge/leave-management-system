@@ -1,10 +1,9 @@
 import React, { useState, forwardRef } from 'react';
-import { Button, Avatar, Box, TextField, Modal, Typography, IconButton, Snackbar } from '@mui/material';
+import { Button, Avatar, Box, TextField, Modal, Typography, Snackbar } from '@mui/material';
 
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
-import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
 import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined';
-import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
 
 import Copyright from '../../components/global/copyright';
 
@@ -108,16 +107,6 @@ const Forgotpassword = forwardRef(({ open, onClose }, ref) => {
         borderRadius: '4px',
         textAlign: 'center',
       }}>
-        <IconButton
-            sx={{
-              position: 'absolute',
-              top: '10px',
-              right: '10px',
-            }}
-            onClick={handleModalClose}
-          >
-            <CloseOutlinedIcon />
-          </IconButton>
         <Avatar sx={{ m: 'auto'}}>
             <ContactSupportOutlinedIcon color="info"/>
           </Avatar>
@@ -157,7 +146,7 @@ const Forgotpassword = forwardRef(({ open, onClose }, ref) => {
     message={
       <span style={{ display: 'flex', alignItems: 'center'}}>
         {snackbarColor === 'success' ? (
-          <CheckCircleOutlinedIcon sx={{ mr: 1 }} fontSize="small" />):(<ErrorOutlineOutlinedIcon sx={{ mr: 1 }} fontSize="small" />)
+          <TaskAltOutlinedIcon sx={{ mr: 1 }} fontSize="small" />):(<ErrorOutlineOutlinedIcon sx={{ mr: 1 }} fontSize="small" />)
         }
         {snackbarMessage}
       </span>

@@ -65,7 +65,7 @@ const LeaveApplicationForm = () => {
       flexDirection="column"
       width="50%"
       pl={{xs: 0, sm:3}}
-      mt={3}>
+      mt={4}>
     <form onSubmit={handleSubmit}>
     <Typography variant="h5" color="#212b36" sx={{fontFamily: "Open Sans", fontWeight: "700"}}>
         Personal Details

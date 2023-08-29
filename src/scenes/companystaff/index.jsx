@@ -51,8 +51,8 @@ const Staff = () => {
               access === "admin"
                 ? colors.blueAccent[700]
                 : access === "manager"
-                ? colors.greenAccent[700]
-                : colors.greenAccent[700]
+                ? colors.redAccent[700]
+                : colors.redAccent[700]
             }
             borderRadius="4px"
           >

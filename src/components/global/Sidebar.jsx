@@ -1,15 +1,15 @@
 import {useState} from "react";
 import { Link } from "react-router-dom";
-import { tokens } from "./../theme";
+import { tokens } from "../../theme";
+import {Sidebar, Menu, MenuItem} from "react-pro-sidebar";
 
-import {Box, Menu, MenuItem, IconButton, Typography, useTheme} from "@mui/material";
+import {Box, IconButton, Typography, useTheme} from "@mui/material";
 
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
 import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import PieChartOutlinedIcon from '@mui/icons-material/PieChartOutlined';
 import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
 
@@ -27,7 +27,7 @@ const Item = ({title, to, icon, selected, setSelected}) => {
     )
 }
 
-const Prosidebar=() =>{
+const ProSidebar=() =>{
     const theme = useTheme();
     const colors= tokens(theme.palette.mode);
     const [isCollapsed, setIsCollapsed] = useState(false);
@@ -35,7 +35,7 @@ const Prosidebar=() =>{
 
     return(
         <Box>
-            <Box>
+            <Sidebar collapsed={isCollapsed} backgroundColor= {colors.primary[400]}>
                 <Menu collapsed={isCollapsed} backgroundColor= {colors.primary[400]}>
                     <MenuItem onClick={()=> setIsCollapsed(!isCollapsed)}
                     icon={isCollapsed? <MenuOutlinedIcon /> : undefined}>
@@ -45,11 +45,11 @@ const Prosidebar=() =>{
                             </IconButton>
                     )}
                     </MenuItem>
-               
+                        
                     <Box paddingLeft={isCollapsed ? undefined : "10%"}>
                         <Item 
                         title="Dashboard"
-                        to="/"
+                        to="/dashboard/app"
                         icon= {<HomeOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
@@ -62,19 +62,19 @@ const Prosidebar=() =>{
                             </Typography>
                         <Item 
                         title="Manage Teams"
-                        to="/employees"
+                        to="/dashboard/companystaff"
                         icon= {<PeopleOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
                         />
                         <Item 
                         title="Leave Configurations"
-                        to="/leaveconfiguratons"
+                        to="/dashboard/leaveconfiguraton"
                         icon= {<BarChartOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
                         />
-                         <Typography
+                        <Typography
                             variant="h6"
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px"}}>
@@ -82,19 +82,19 @@ const Prosidebar=() =>{
                             </Typography>
                         <Item 
                         title="Leave Calendar"
-                        to="/calendar"
+                        to="/dashboard/leavetracker"
                         icon= {<CalendarTodayOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
                         />
                         <Item 
                         title="Leave Policy"
-                        to="/leavepolicy"
+                        to="/dashboard/leavepolicy"
                         icon= {<HelpOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
                         />
-                         <Typography
+                        <Typography
                             variant="h6"
                             color={colors.grey[300]}
                             sx={{ m: "15px 0 5px 20px"}}>
@@ -102,23 +102,16 @@ const Prosidebar=() =>{
                             </Typography>
                         <Item 
                         title="Pie Charts"
-                        to="/pie"
-                        icon= {<PieChartOutlinedIcon/>}
-                        selected={selected}
-                        setSelected={setSelected}
-                        />
-                        <Item 
-                        title="Line Graphs"
-                        to="/line"
+                        to="/dashboard/report"
                         icon= {<TimelineOutlinedIcon/>}
                         selected={selected}
                         setSelected={setSelected}
                         />
                     </Box>
                 </Menu>
-            </Box>
+            </Sidebar>
         </Box>
     )
 }
 
-export default Prosidebar;
+export default ProSidebar;

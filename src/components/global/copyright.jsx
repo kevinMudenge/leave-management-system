@@ -10,7 +10,7 @@ export default function Copyright(props) {
     return (
       <Typography variant="h6" color={colors.blueAccent[400]} align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" target="blank" href="sasapay.co.ke">
+        <Link color="inherit" target="blank" href="https//:sasapay.co.ke">
           SasaPay
         </Link>{' '}
         {new Date().getFullYear()}

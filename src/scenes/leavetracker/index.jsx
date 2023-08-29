@@ -59,7 +59,7 @@ const Leavetracker = () => {
         subtitle="Track your requested leaves here"
       />
       <Box
-        mt={2}
+        mt={4}
         height="75vh"
         sx={{
           "& .MuiDataGrid-root": {

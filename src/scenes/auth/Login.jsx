@@ -45,7 +45,7 @@ export default function Login() {
       email: email,
       password: password,
     });
-
+    
     navigate('/dashboard', { replace: true });
   }
 };
@@ -61,8 +61,7 @@ export default function Login() {
   };
 
   return (
-      <Container component="main" maxWidth="xs"
-      >
+      <Container component="main" maxWidth="xs">
         <Box
           sx={{
             marginTop: 8,
@@ -77,6 +76,7 @@ export default function Login() {
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
+          
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -105,13 +105,14 @@ export default function Login() {
             display="flex" 
             mb={1}
             justifyContent="space-around">
-            <Link onClick={handleForgotPasswordOpen} variant="body2" underline='hover'>
-                  Forgot password?
-            </Link>
-            <Modal open={forgotPasswordOpen} onClose={handleForgotPasswordClose}>
-              <ForgotPassword open={forgotPasswordOpen} onClose={handleForgotPasswordClose} />
-            </Modal>
+              <Link onClick={handleForgotPasswordOpen} variant="body2" sx={{ cursor: 'pointer', '&:hover': { color: '#b71c1c' } }} underline='hover'>
+                Forgot password?
+              </Link>
+              <Modal open={forgotPasswordOpen} onClose={handleForgotPasswordClose}>
+                <ForgotPassword open={forgotPasswordOpen} onClose={handleForgotPasswordClose} />
+              </Modal>
             </Box>
+            
             <FormControlLabel
               control={<Checkbox value="true" color="error" />}
               label="Remember me"

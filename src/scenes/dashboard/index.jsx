@@ -2,21 +2,19 @@ import { Box, Button, Typography, useTheme } from "@mui/material";
 
 import { mockTransactions } from "../../data/mockData";
 
-import { tokens } from "../../theme";
-
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
 
-import Topbar from "./../../components/global/Topbar"
+import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
-import StatBox from "../../components/StatBox";
+import StatBox from "../../components/sections/StatBox";
+
+
 
 const Dashboard = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
   return (
-    <>
-    <Topbar />
     <Box m={4}>
       <Box display="flex" justifyContent="space-between">
         <Header title="Hello" />
@@ -204,7 +202,6 @@ const Dashboard = () => {
         </Box>
         </Box>
       </Box>
-  </>
   );
 };
 
