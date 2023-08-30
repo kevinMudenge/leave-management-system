@@ -74,7 +74,7 @@ const LeaveApplicationForm = () => {
       <Box display="flex" justifyContent="center" alignItems="center">
         <Header
           title="Leave Application Form"
-          subtitle="Input your details below to begin your leave application process."
+          subtitle="Input your details below to begin your leave application process." sx={{alignItems: "center"}}
         />
       </Box>
       <Box
