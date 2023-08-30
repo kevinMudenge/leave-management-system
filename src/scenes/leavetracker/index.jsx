@@ -61,6 +61,7 @@ const Leavetracker = () => {
       <Box
         mt={4}
         height="75vh"
+        width="80%"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
