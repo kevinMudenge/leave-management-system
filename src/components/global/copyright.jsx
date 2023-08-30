@@ -1,4 +1,4 @@
-import Link from '@mui/material/Link';
+
 import {Typography, useTheme} from "@mui/material";
 
 import {tokens} from "../../theme";
@@ -6,13 +6,14 @@ import {tokens} from "../../theme";
 export default function Copyright(props) {
     const theme = useTheme();    
     const colors= tokens(theme.palette.mode);
+    const sasapayurl= "https//:sasapay.co.ke"
   
     return (
       <Typography variant="h6" color={colors.blueAccent[400]} align="center" {...props}>
         {'Copyright © '}
-        <Link color="inherit" target="blank" href="https//:sasapay.co.ke">
+        <a color="inherit" target="_blank" rel="noopener noreferrer" href={sasapayurl}>
           SasaPay
-        </Link>{' '}
+        </a>{' '}
         {new Date().getFullYear()}
         {'.'}
       </Typography>

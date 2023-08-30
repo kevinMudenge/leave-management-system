@@ -6,14 +6,41 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
+import { Button } from "@mui/material";
+import Copyright from "../../components/global/copyright"
 
 const Leavepolicy = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  return (
-    <Box m="20px">
-      <Header title="Leave" subtitle="Frequently Asked Questions " />
 
+  const DocumentLinkButton = () => {
+    const documentUrl =
+      "https://docs.google.com/document/d/1hrX-PEKmBhSv5o8WKESdG3ssOIir0qHi/edit?usp=sharing&ouid=106342101822357898565&rtpof=true&sd=trueF";
+    return (
+      <a href={documentUrl} target="_blank" rel="noopener noreferrer">
+        <Button variant="contained" color="primary" sx={{whiteSpace: 'nowrap'}}>
+          Download Policy
+        </Button>
+      </a>
+    );
+  };
+  return (
+    <Box m={{ xs: 0, sm: 4 }} display="flex" width={{xs:'100%', sm:'98%'}} justifyContent="center" flexDirection="column" alignSelf="center"
+    sx={{
+        boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
+        borderRadius: "8px",
+        padding: "16px",
+    }}>
+      <Box
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+      >
+        <Header title="Leave" subtitle="Frequently Asked Questions " />
+        <DocumentLinkButton />
+      </Box>
+
+      <Box mt={4}>
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
@@ -27,7 +54,7 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion defaultCollapsed>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             Another Important Question
@@ -40,7 +67,7 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion defaultCollapsed>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             Your Favorite Question
@@ -53,7 +80,7 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion defaultCollapsed>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             Some Random Question
@@ -66,7 +93,7 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion defaultCollapsed>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             The Final Question
@@ -79,6 +106,8 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
+    </Box>
+    <Copyright sx={{ mt: 8, mb: 4 }} />
     </Box>
   );
 };

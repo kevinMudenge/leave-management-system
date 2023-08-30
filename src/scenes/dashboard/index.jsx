@@ -2,12 +2,11 @@ import { Box, Button, Typography, Grid, useTheme } from "@mui/material";
 
 import { mockTransactions } from "../../data/mockData";
 
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-
 import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
 import Copyright from '../../components/global/copyright';
 import StatBox from "../../components/sections/StatBox";
+import Sidebar from "../../components/global/Sidebar";
 
 
 

@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import {
   TextField,
@@ -8,7 +8,10 @@ import {
   Grid,
 } from "@mui/material";
 import { useState } from "react";
+
 import Header from "../../components/global/Header";
+import Copyright from "../../components/global/copyright";
+import {tokens} from "../../theme";
 
 const LeaveApplicationForm = () => {
   const leaveTypes = [
@@ -23,6 +26,7 @@ const LeaveApplicationForm = () => {
     //add api calls or more leave data
   ];
 
+  
   const [userName, setUserName] = useState("");
   const [selectedLeaveType, setSelectedLeaveType] = useState("");
   const [startDate, setStartDate] = useState("");
@@ -32,8 +36,11 @@ const LeaveApplicationForm = () => {
   const [aliasNumber, setAliasNumber] = useState("");
   const [email, setEmail] = useState("");
   const [jobPosition, setJobPosition] = useState("");
+  const theme = useTheme();    
+  const colors= tokens(theme.palette.mode);
 
   const fetchUserDetails = () => {
+    
     const userDetails = {
       name: "John Terrni",
       // Other user details from session data
@@ -70,7 +77,12 @@ const LeaveApplicationForm = () => {
   };
 
   return (
-    <Box m={{ xs: 0, sm: 7 }}>
+    <Box m={{ xs: 0, sm: 4 }} display="flex" width={{xs:'100%', sm:'70%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
+    sx={{
+        boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
+        borderRadius: "8px",
+        padding: "16px",
+    }}>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Header
           title="Leave Application Form"
@@ -78,18 +90,16 @@ const LeaveApplicationForm = () => {
         />
       </Box>
       <Box
-        borderLeft={1}
-        borderColor="#00B8D9"
         display="flex"
         flexDirection="column"
         width="80%"
-        pl={{ xs: 0, sm: 3 }}
+        pl={{ xs: 0, sm: 1 }}
         mt={4}
       >
         <form onSubmit={handleSubmit}>
           <Typography
             variant="h5"
-            color="#212b36"
+            color={colors.grey[100]}
             sx={{ fontFamily: "Open Sans", fontWeight: "700" }}
           >
             Personal Details
@@ -137,7 +147,7 @@ const LeaveApplicationForm = () => {
                 required
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item xs={12} display="flex" gap={2}>
               <TextField
                 label="Job Position"
                 variant="outlined"
@@ -146,7 +156,31 @@ const LeaveApplicationForm = () => {
                 onChange={(e) => setJobPosition(e.target.value)}
                 required
               />
+              <FormControl sx={{ minWidth: "49%"}}>
+                <InputLabel>Select Reliever</InputLabel>
+                <Select
+                  label="Select Releiver"
+                  variant="outlined"
+                  value={selectedLeaveType}
+                  onChange={(e) => setSelectedLeaveType(e.target.value)}
+                  required
+                >
+                  {leaveTypes.map((leaveType) => (
+                    <MenuItem key={leaveType.id} value={leaveType.id}>
+                      {leaveType.name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
             </Grid>
+            <Typography
+            variant="h5"
+            color={colors.grey[100]}
+            ml={2} mt={3}
+            sx={{ fontFamily: "Open Sans", fontWeight: "700" }}
+            >
+            Leave Details
+            </Typography>
             <Grid item xs={12}>
               <FormControl sx={{ minWidth: 280 }}>
                 <InputLabel>Leave Type</InputLabel>
@@ -165,6 +199,7 @@ const LeaveApplicationForm = () => {
                   ))}
                 </Select>
               </FormControl>
+      
             </Grid>
             <Grid item xs={6}>
               Start Date
@@ -277,6 +312,7 @@ const LeaveApplicationForm = () => {
           </Grid>
         </form>
       </Box>
+      <Copyright sx={{ mt: 8, mb: 4 }} />
     </Box>
   );
 };
