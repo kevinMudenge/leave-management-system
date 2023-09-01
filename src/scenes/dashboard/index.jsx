@@ -7,6 +7,7 @@ import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
 import Copyright from '../../components/global/copyright';
 import StatBox from "../../components/sections/StatBox";
+import { LeavetrackerTable } from "../leavetracker/index"
 
 import PeopleAltOutlinedIcon  from '@mui/icons-material/PeopleAltOutlined';
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
@@ -69,6 +70,7 @@ const Dashboard = () => {
             >
               Leave requests
             </Typography>
+            <LeavetrackerTable />
           </Box>
         </Grid>
         <Grid item xs={12} md={2}>
