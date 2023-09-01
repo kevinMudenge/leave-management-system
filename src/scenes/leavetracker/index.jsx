@@ -48,7 +48,7 @@ const Leavetracker = () => {
     },
     {
       field: "zipCode",
-      headerName: "Zip Code",
+      headerName: "Dept ID",
       flex: 1,
     },
   ];

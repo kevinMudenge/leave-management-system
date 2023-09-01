@@ -1,3 +1,4 @@
+import { Link as RouterLink } from 'react-router-dom';
 import { Box, Button, Typography, Grid, useTheme } from "@mui/material";
 
 import { mockTransactions } from "../../data/mockData";
@@ -6,7 +7,10 @@ import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
 import Copyright from '../../components/global/copyright';
 import StatBox from "../../components/sections/StatBox";
-import Sidebar from "../../components/global/Sidebar";
+
+import PeopleAltOutlinedIcon  from '@mui/icons-material/PeopleAltOutlined';
+import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
+import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 
 
 
@@ -21,33 +25,42 @@ const Dashboard = () => {
       </Box>
       
       <Grid container spacing={2} mt={1} mb={2} mx={1}>
-        <Grid item xs={12} md={3}>
-          <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }}>
+        <Grid item xs={12} md={3} alignItems="flex-start">
+          <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
             <Typography>Request for a Leave</Typography>
           </Button>
         </Grid>
         <Grid item xs={12} md={3}>
           <StatBox
             title="On Leave"
-            progress=".5"
+            icon={<PeopleAltOutlinedIcon/>}
+            data="10"
+            subdata="57"
+            subtitle="Total Employees"
             />
         </Grid>
         <Grid item xs={12} md={3}>
-          <StatBox
-            title="Available"
-            progress="0.50"
-            />
-        </Grid>
-        <Grid item xs={12} md={3}>
-          <StatBox
+        <StatBox
             title="New Requests"
-            progress="0.30"
+            icon={<TimelineOutlinedIcon/>}
+            data="1"
+            subdata="5"
+            subtitle="Total Requests"
           />
+        </Grid>
+        <Grid item xs={12} md={3}>
+           <StatBox
+            title="Approved/Declined"
+            icon={<BarChartOutlinedIcon/>}
+            data="12"
+            subdata="2"
+            subtitle="Requests Status"
+            />
         </Grid>
       </Grid>
         
       <Grid container spacing={2} mt={1} mb={2} mx={1}>
-        <Grid item xs={12}>
+        <Grid item xs={12} md={9}>
           <Box>
             <Typography
             variant="h5"
@@ -57,30 +70,8 @@ const Dashboard = () => {
               Leave requests
             </Typography>
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
-           {/*datagrid goes here*/}
-          </Box>
         </Grid>
-      </Grid>
-
-        {/* ROW 3 */}
-      <Grid container spacing={2} mt={1} mb={2} mx={1}>
-        <Grid item xs={12} md={8}>
-          <Typography variant="h5" fontWeight="600">
-            Department Data
-          </Typography>
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            mt="25px"
-          >
-            {/*pie data will go here */}
-            
-            
-          </Box>
-        </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={2}>
           <Box
             display="flex"
             justifyContent="space-between"
@@ -107,6 +98,25 @@ const Dashboard = () => {
               <Box color={colors.grey[100]}>{transaction.date}</Box>
             </Box>
           ))}
+        </Grid>
+      </Grid>
+
+        {/* ROW 3 */}
+      <Grid container spacing={2} mt={1} mb={2} mx={1}>
+        <Grid item xs={12}>
+          <Typography variant="h5" fontWeight="600">
+            Department Data
+          </Typography>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            mt="25px"
+          >
+            {/*pie data will go here and etcetera*/}
+            
+            
+          </Box>
         </Grid>
       </Grid>
       <Grid mb={3}>

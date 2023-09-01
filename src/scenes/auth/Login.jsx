@@ -17,6 +17,7 @@ import Copyright from '../../components/global/copyright';
 
 
 export default function Login() {
+
   const navigate = useNavigate();
   const [showPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
@@ -60,7 +61,7 @@ export default function Login() {
     setForgotPasswordOpen(false);
   };
 
-  return (
+  return (<Box sx={{backgroundImage: 'url(../../assets/background.png)', backgroundRepeat: 'no-repeat', width: '100%'}}>
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -70,7 +71,7 @@ export default function Login() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1}}>
+          <Avatar sx={{ m: 1, backgroundColor: '#e1e2fe'}}>
             <LockOutlinedIcon color="info"/>
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -132,5 +133,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
+      </Box>
   );
 }

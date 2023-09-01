@@ -19,7 +19,7 @@ const Leavepolicy = () => {
     return (
       <a href={documentUrl} target="_blank" rel="noopener noreferrer">
         <Button variant="contained" color="primary" sx={{whiteSpace: 'nowrap'}}>
-          Download Policy
+          Read the Policy
         </Button>
       </a>
     );
@@ -36,7 +36,7 @@ const Leavepolicy = () => {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Header title="Leave" subtitle="Frequently Asked Questions " />
+        <Header title="Leave Policy" subtitle="Dear Gentle Reader, Get Answers to Your Leave issues and Your Frequently Asked Issues Here" />
         <DocumentLinkButton />
       </Box>
 
@@ -84,6 +84,19 @@ const Leavepolicy = () => {
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             Some Random Question
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion defaultCollapsed>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography color={colors.blueAccent[500]} variant="h5">
+            The Father of All Questions
           </Typography>
         </AccordionSummary>
         <AccordionDetails>

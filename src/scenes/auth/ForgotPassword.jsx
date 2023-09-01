@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import { useState, forwardRef } from 'react';
 import { Button, Avatar, Box, TextField, Modal, Typography, Snackbar } from '@mui/material';
 
 import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
@@ -107,8 +107,8 @@ const Forgotpassword = forwardRef(({ open, onClose }, ref) => {
         borderRadius: '4px',
         textAlign: 'center',
       }}>
-        <Avatar sx={{ m: 'auto'}}>
-            <ContactSupportOutlinedIcon color="info"/>
+        <Avatar sx={{ m: 'auto', backgroundColor: '#f8dcdb'}}>
+            <ContactSupportOutlinedIcon color="error"/>
           </Avatar>
         <Typography component="h1" variant="h5" mt={2} mb={5}>Forgot Password?</Typography>
         <Typography variant='body2'>Enter the Email address associated with your account and we will send you your reset password shortly.</Typography>

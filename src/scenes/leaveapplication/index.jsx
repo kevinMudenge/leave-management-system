@@ -17,13 +17,13 @@ const LeaveApplicationForm = () => {
   const leaveTypes = [
     { id: 1, name: "Annual Leave" },
     { id: 2, name: "Sick Leave" },
-    { id: 3, name: "Maternity Leave" },
-    { id: 4, name: "Paternal Leave" },
+    { id: 3, name: "Maternity Leave" },// place as menu item to edit 
+    { id: 4, name: "Paternal Leave" },//as per gender
     { id: 5, name: "Compasionate Leave" },
     { id: 6, name: "Persoal Leave" },
     { id: 6, name: "Exam Leave" },
 
-    //add api calls or more leave data
+    //replace with api calls
   ];
 
   
