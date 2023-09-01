@@ -2,7 +2,7 @@ import {useContext, useState} from "react";
 import { Link as RouterLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
-import {Box, FormControl, IconButton, InputLabel, Typography, useTheme} from "@mui/material";
+import {Box, FormControl, IconButton, InputLabel, Typography, ClickAwayListener, useTheme} from "@mui/material";
 import {Select, Tooltip, Chip} from "@mui/material";
 import {Menu, Button, MenuItem} from "@mui/material";
 
@@ -55,14 +55,18 @@ const Topbar=() =>{
   const handleSearch = () => {
     setSearch(! search);
   };
+
+  const handleSearchUnsee = () => {
+    setSearch(false);
+  };
   
   
-    return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:0}} py={1}>
+    return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:0}} py={1} minWidth="100%">
       <Box display="flex" alignItems="center">
         <Box minWidth="48px" maxWidth="120px">
           <img src={Logo} style={{height: "auto", width: "100%"}} alt="SasaPay|LMS" />
         </Box>
-        <Box display="flex" gap={1} pl={{sm:7, xs:1}}>
+        <Box display="flex" gap={4} pl={{sm:7, xs:1}}>
           <Button
             variant={location.pathname === '/dashboard/app' ? 'contained' : 'text'}
             color={location.pathname === '/dashboard/app' ? 'error' : 'info'}
@@ -70,7 +74,7 @@ const Topbar=() =>{
             size="small"
             to="/dashboard"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '32px', textTransform: 'revert'}}
           >
             <GridViewOutlinedIcon />
             <Typography ml={1}  
@@ -133,6 +137,7 @@ const Topbar=() =>{
           (<DarkModeOutlinedIcon color="primary"/>):(<LightModeOutlinedIcon />)}
         </IconButton>
         
+        <ClickAwayListener onClickAway={handleSearchUnsee}>
         <Box display="flex" justifyContent="space-between">
           {search && (
           <FormControl size="small">
@@ -157,6 +162,7 @@ const Topbar=() =>{
             <SearchOutlinedIcon color={theme.palette.mode === 'light' ? "primary": undefined}/>
           </IconButton>
         </Box>
+        </ClickAwayListener>
       </Box>
       
       <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="ani ievn" variant="filled" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>

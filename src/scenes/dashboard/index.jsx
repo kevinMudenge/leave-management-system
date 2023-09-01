@@ -1,12 +1,16 @@
-import { Box, Button, Typography, useTheme } from "@mui/material";
+import { Link as RouterLink } from 'react-router-dom';
+import { Box, Button, Typography, Grid, useTheme } from "@mui/material";
 
 import { mockTransactions } from "../../data/mockData";
 
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
-
 import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
+import Copyright from '../../components/global/copyright';
 import StatBox from "../../components/sections/StatBox";
+
+import PeopleAltOutlinedIcon  from '@mui/icons-material/PeopleAltOutlined';
+import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
+import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 
 
 
@@ -15,124 +19,59 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box m={4}>
-      <Box display="flex" justifyContent="space-between">
-        <Header title="Hello" />
-
-        <Box>
-        <Button variant="contained" sx={{borderRadius:"32px", textTransform: "revert"}}>
-        <Typography>Request for a Leave</Typography>
-        </Button>
-        </Box>
+    <Box mt={2} mx={3}>
+      <Box display="flex" mt={2} mx={3}>
+        <Header title="Hey You," />
       </Box>
       
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(12, 1fr)"
-        gridAutoRows="140px"
-        gap="20px"
-        mt={2}
-      >
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          borderRadius="16px"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
+      <Grid container spacing={2} mt={1} mb={2} mx={1}>
+        <Grid item xs={12} md={3} alignItems="flex-start">
+          <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
+            <Typography>Request for a Leave</Typography>
+          </Button>
+        </Grid>
+        <Grid item xs={12} md={3}>
           <StatBox
             title="On Leave"
-            subtitle="data"
-            progress=".5"
-            icon=""
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="16px"
-        >
-          <StatBox
-            title="Available"
-            subtitle=""
-            progress="0.50"
-            icon=""
-          />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="16px"
-        >
-          <StatBox
+            icon={<PeopleAltOutlinedIcon/>}
+            data="10"
+            subdata="57"
+            subtitle="Total Employees"
+            />
+        </Grid>
+        <Grid item xs={12} md={3}>
+        <StatBox
             title="New Requests"
-            subtitle=""
-            progress="0.30"
-            icon={
-              <PersonAddIcon
-                sx={{ color: "black", fontSize: "32px" }}
-              />
-            }
+            icon={<TimelineOutlinedIcon/>}
+            data="1"
+            subdata="5"
+            subtitle="Total Requests"
           />
-        </Box>
-        <Box
-          gridColumn="span 3"
-          backgroundColor={colors.primary[400]}
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          borderRadius="16px"
-        >
-          <StatBox
-            title="Total Leave Traffic"
-            subtitle=""
-            progress="0.80"
-            icon=""
-          />
-        </Box>
-
-        {/* ROW 2 */}
-        <Box
-          gridColumn="span 8"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          borderRadius="16px"
-        >
-          <Box
-            mt="25px"
-            p="0 30px"
-            display="flex "
-            justifyContent="space-between"
-            alignItems="center"
-          >
-            <Box>
-              <Typography
-                variant="h5"
-                fontWeight="600"
-                color={colors.grey[100]}
-              >
-                Leave requests
-              </Typography>
-            </Box>
+        </Grid>
+        <Grid item xs={12} md={3}>
+           <StatBox
+            title="Approved/Declined"
+            icon={<BarChartOutlinedIcon/>}
+            data="12"
+            subdata="2"
+            subtitle="Requests Status"
+            />
+        </Grid>
+      </Grid>
+        
+      <Grid container spacing={2} mt={1} mb={2} mx={1}>
+        <Grid item xs={12} md={9}>
+          <Box>
+            <Typography
+            variant="h5"
+            fontWeight="600"
+            color={colors.grey[100]}
+            >
+              Leave requests
+            </Typography>
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
-            {/*datagrid goes here*/}
-          </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          borderRadius="16px"
-          overflow="auto"
-        >
+        </Grid>
+        <Grid item xs={12} md={2}>
           <Box
             display="flex"
             justifyContent="space-between"
@@ -159,16 +98,12 @@ const Dashboard = () => {
               <Box color={colors.grey[100]}>{transaction.date}</Box>
             </Box>
           ))}
-        </Box>
+        </Grid>
+      </Grid>
 
         {/* ROW 3 */}
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          borderRadius="16px"
-          p="30px"
-        >
+      <Grid container spacing={2} mt={1} mb={2} mx={1}>
+        <Grid item xs={12}>
           <Typography variant="h5" fontWeight="600">
             Department Data
           </Typography>
@@ -178,30 +113,29 @@ const Dashboard = () => {
             alignItems="center"
             mt="25px"
           >
-            {/*pie data will go here */}
+            {/*pie data will go here and etcetera*/}
             
             
           </Box>
-        </Box>
-        <Box
-          gridColumn="span 4"
-          gridRow="span 2"
-          backgroundColor={colors.primary[400]}
-          borderRadius="16px"
+        </Grid>
+      </Grid>
+      <Grid mb={3}>
+        <Typography
+        variant="h5"
+        fontWeight="600"
+        sx={{ padding: "30px 30px 0 30px" }}
         >
-          <Typography
-            variant="h5"
-            fontWeight="600"
-            sx={{ padding: "30px 30px 0 30px" }}
-          >
-            Projected Availability
-          </Typography>
-          <Box height="250px" mt="-20px">
-            {/*//avatars and what nots go here */}
-          </Box>
+          Projected Availability
+        </Typography>
+        <Box height="250px" mt="-20px">
+          {/*//avatars and what nots go here */}
         </Box>
-        </Box>
-      </Box>
+      </Grid>
+
+      <Copyright sx={{ mt: 8, mb: 4 }} />
+
+    </Box>
+      
   );
 };
 

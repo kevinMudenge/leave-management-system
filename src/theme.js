@@ -45,7 +45,7 @@ export const tokens=(mode) =>({
         600: "#535ac8",
         700: "#3e4396",
         800: "#2a2d64",
-        900: "#151632"
+        900: "#e1e2fe"
     },
 }: {
     grey: {
@@ -136,32 +136,41 @@ export const themeSettings =(mode)=>{
             }),
         },
         typography: {
-            fontFamily: ["Source Sans 3","sans-serif"].join(","),
+            fontFamily: ['-apple-system', '"Segoe UI"', '"Helvetica Neue"', 'sans-serif'],
             fontSize: 12,
-            h1:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:40,
+            title: {
+              fontFamily: ['Montserrat', 'Arial', 'sans-serif'],
+              fontSize: 24,
             },
-            h2:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:32,
+            subtitle: {
+              fontFamily: ['Lato', '"Lucida Sans Unicode"', 'sans-serif'],
+              fontSize: 16,
             },
-            h3:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:24,
+            h1: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 40,
             },
-            h4:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:20,
+            h2: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 32,
             },
-            h5:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:16,
+            h3: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 24,
             },
-            h6:{
-                fontFamily: ["Source Sans 3","sans-serif"].join(","),
-                fontSize:14,
+            h4: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 20,
             },
+            h5: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 16,
+            },
+            h6: {
+              fontFamily: ['Roboto', 'Arial', 'sans-serif'],
+              fontSize: 14,
+            },
+        
         },
     };
 };
