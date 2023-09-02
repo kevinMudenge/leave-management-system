@@ -1,31 +1,29 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink as RouterLink } from 'react-router-dom';
 
-import { Fab, Popover, MenuItem, Typography, useTheme } from '@mui/material';
+import { Fab, Popover, MenuItem, Box, Typography, useTheme } from '@mui/material';
+
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
-
-
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
-import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
-import HelpOutlinedIcon from '@mui/icons-material/HelpOutlined';
-import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined';
-import TimelineOutlinedIcon from '@mui/icons-material/TimelineOutlined';
 import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import EngineeringOutlinedIcon from '@mui/icons-material/EngineeringOutlined';
+import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
+import InsightsOutlinedIcon from '@mui/icons-material/InsightsOutlined';
 
 import { tokens } from '../../theme';
 
 
-const Item = ({title, to, icon, selected, setSelected}) => {
+const Item = ({title, path, icon}) => {
     const theme = useTheme();
     const colors = tokens(theme.palette.mode);
     return(
-        <MenuItem active={selected === title} 
+        <MenuItem
+        component={RouterLink}
+        to={path}
         style={{color: colors.grey[100]}} 
-        onClick={()=> setSelected(title)}
         >
         {icon}
         <Typography m={2}>{title}</Typography>
-        <Link to={to}/>
         </MenuItem>
     )
 }
@@ -35,8 +33,7 @@ const Sidebar = () => {
 
   const theme = useTheme();
     const colors= tokens(theme.palette.mode);
-    const [selected, setSelected]=useState('')
-
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -68,6 +65,14 @@ const Sidebar = () => {
           vertical: 'top',
           horizontal: 'right',
         }}
+        sx= {{
+          p: 0,
+          mt: 1.5,
+          ml: 0.75,
+          '& .MuiMenuItem-root': {
+            borderRadius: 1,
+            marginX: 1,
+          }}}
       >
         <Typography
         variant="h6"
@@ -77,17 +82,13 @@ const Sidebar = () => {
         </Typography>
         <Item 
         title="People Excellence"
-        to="/dashboard/companystaff"
+        path="/dashboard/companystaff"
         icon= {<PeopleOutlinedIcon/>}
-        selected={selected}
-        setSelected={setSelected}
         />
         <Item 
         title="Leave Configurations"
-        to="/dashboard/leaveconfiguraton"
-        icon= {<BarChartOutlinedIcon/>}
-        selected={selected}
-        setSelected={setSelected}
+        path="/dashboard/leaveconfiguraton"
+        icon= {<EngineeringOutlinedIcon/>}
         />
         <Typography
         variant="h6"
@@ -97,17 +98,8 @@ const Sidebar = () => {
         </Typography>
         <Item 
         title="Leave Calendar"
-        to="/dashboard/leavetracker"
+        path="/dashboard/leavetracker"
         icon= {<CalendarTodayOutlinedIcon/>}
-        selected={selected}
-        setSelected={setSelected}
-        />
-        <Item 
-        title="Leave Policy"
-        to="/dashboard/leavepolicy"
-        icon= {<HelpOutlinedIcon/>}
-        selected={selected}
-        setSelected={setSelected}
         />
         <Typography
         variant="h6"
@@ -115,13 +107,13 @@ const Sidebar = () => {
         sx={{ m: "15px 0 5px 20px"}}>
           Reports
         </Typography>
+        <Box mb={1}>
         <Item 
         title="Company Charts"
-        to="/dashboard/report"
-        icon= {<TimelineOutlinedIcon/>}
-        selected={selected}
-        setSelected={setSelected}
+        path="/dashboard/report"
+        icon= {<InsightsOutlinedIcon/>}
         />
+        </Box>
         
       </Popover>
     </>

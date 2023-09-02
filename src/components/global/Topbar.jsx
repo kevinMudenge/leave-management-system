@@ -16,8 +16,9 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
+
 
 import {ColorModeContext, tokens} from "../../theme";
 import Logo from '../../assets/logo.svg';
@@ -61,9 +62,9 @@ const Topbar=() =>{
   };
   
   
-    return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:0}} py={1} minWidth="100%">
+    return <Box display="flex" justifyContent="space-between" px={{sm:2, xs:1}} py={1} minWidth="100%">
       <Box display="flex" alignItems="center">
-        <Box minWidth="48px" maxWidth="120px">
+        <Box minWidth="100px" maxWidth="120px">
           <img src={Logo} style={{height: "auto", width: "100%"}} alt="SasaPay|LMS" />
         </Box>
         <Box display="flex" gap={4} pl={{sm:7, xs:1}}>
@@ -74,7 +75,7 @@ const Topbar=() =>{
             size="small"
             to="/dashboard"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert'}}
+            sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto"}}
           >
             <GridViewOutlinedIcon />
             <Typography ml={1}  
@@ -89,7 +90,7 @@ const Topbar=() =>{
             to="/dashboard/leaveapplication"
             size="small"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto"}}
           >
             <FeedOutlinedIcon />
             <Typography ml={1} 
@@ -104,7 +105,7 @@ const Topbar=() =>{
             size="small"
             to="/dashboard/leavetracker"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto" }}
           >
             <HistoryToggleOffOutlinedIcon />
             <Typography ml={1} 
@@ -119,7 +120,7 @@ const Topbar=() =>{
             to="/dashboard/leavepolicy"
             size="small"
             activeClassName="active-button"
-            sx={{ borderRadius: '32px', textTransform: 'revert' }}
+            sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto" }}
           >
             <PolicyOutlinedIcon />
             <Typography ml={1} 
@@ -176,10 +177,18 @@ const Topbar=() =>{
     onClose={handleClose}
     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+    sx= {{
+      p: 0,
+      mt: 1.5,
+      ml: 0.75,
+      '& .MuiMenuItem-root': {
+        borderRadius: 1,
+        marginX: 1,
+      }}}
     >
       <MenuItem onClick={handleClose}>
         <IconButton>
-          <PersonOutlinedIcon color='info'/>
+          <ManageAccountsOutlinedIcon color='info'/>
         </IconButton>
         <Typography ml={1} color={colors.blueAccent[400]}>
           Profile
