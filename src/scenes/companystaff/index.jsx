@@ -69,9 +69,14 @@ const Staff = () => {
   ];
 
   return (
-    <Box p={4}>
+    <Box my={{xs: 2, sm: 4}} mx={{ xs: 0, sm: 4 }} display="flex" width={{xs:'99%', sm:'98%', md: '96%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
+    sx={{
+        boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
+        borderRadius: "8px",
+        padding: "16px",
+    }}>
       <Header title="Company Staff" subtitle="Manage staff" />
-      <Box
+      <Box width='100%'
         mt={2}
         height="75vh"
         sx={{
@@ -85,23 +90,24 @@ const Staff = () => {
             color: colors.blueAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.grey[800],
+            backgroundColor: colors.blueAccent[900],
             borderBottom: "none",
-            my: 1
+            mt: 2, mb: 1,
+            color: "#000",
           },
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: colors.primary[400],
           },
           "& .MuiDataGrid-footerContainer": {
             borderTop: "none",
-            backgroundColor: colors.blueAccent[900],
-            mt: 2
+            mt: 2,
+            
           },
           "& .MuiCheckbox-root": {
-            color: `${colors.blueAccent[200]} !important`,
+            color: `${colors.blueAccent[300]} !important`,
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
-            color: `${colors.grey[400]} !important`,
+            color: `${colors.grey[100]} !important`,
           },
         }}
       >

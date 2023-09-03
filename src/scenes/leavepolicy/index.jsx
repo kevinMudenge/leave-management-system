@@ -25,7 +25,7 @@ const Leavepolicy = () => {
     );
   };
   return (
-    <Box m={{ xs: 0, sm: 4 }} display="flex" width={{xs:'100%', sm:'98%'}} justifyContent="center" flexDirection="column" alignSelf="center"
+    <Box m={{ xs: 3, sm: 4 }} display="flex" width={{xs:'99%', sm:'98%', md: '96%'}} justifyContent="center" flexDirection="column" alignSelf="center"
     sx={{
         boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
         borderRadius: "8px",
@@ -54,7 +54,7 @@ const Leavepolicy = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultCollapsed>
+      <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.blueAccent[500]} variant="h5">
             Another Important Question

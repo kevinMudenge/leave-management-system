@@ -1,7 +1,3 @@
-import PropTypes from 'prop-types';
-import { set, sub } from 'date-fns';
-import { noCase } from 'change-case';
-import { faker } from '@faker-js/faker';
 import { useState } from 'react';
 // @mui
 import {
@@ -20,35 +16,29 @@ import {
   ListItemAvatar,
   ListItemButton,
 } from '@mui/material';
-// utils
-import { fToNow } from '../../../utils/formatTime';
-// components
-import Iconify from '../../../components/iconify';
-import Scrollbar from '../../../components/scrollbar';
 
-// ----------------------------------------------------------------------
 
 const NOTIFICATIONS = [
   {
-    id: faker.datatype.uuid(),
+    id: '1',
     title: 'Your order is placed',
     description: 'waiting for shipping',
     avatar: null,
     type: 'order_placed',
-    createdAt: set(new Date(), { hours: 10, minutes: 30 }),
+    createdAt: (new Date(), { hours: 10, minutes: 30 }),
     isUnRead: true,
   },
   {
-    id: faker.datatype.uuid(),
-    title: faker.name.fullName(),
+    id: '2',
+    title: 'jack',
     description: 'answered to your comment on the Minimal',
     avatar: '/assets/images/avatars/avatar_2.jpg',
     type: 'friend_interactive',
-    createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
+    createdAt: (new Date(), { hours: 3, minutes: 30 }),
     isUnRead: true,
   },
   {
-    id: faker.datatype.uuid(),
+    id: '3',
     title: 'You have new message',
     description: '5 unread messages',
     avatar: null,
@@ -57,7 +47,7 @@ const NOTIFICATIONS = [
     isUnRead: false,
   },
   {
-    id: faker.datatype.uuid(),
+    id: '4',
     title: 'You have new mail',
     description: 'sent from Guido Padberg',
     avatar: null,
@@ -66,7 +56,7 @@ const NOTIFICATIONS = [
     isUnRead: false,
   },
   {
-    id: faker.datatype.uuid(),
+    id: '6',
     title: 'Delivery processing',
     description: 'Your order is being shipped',
     avatar: null,
@@ -224,7 +214,6 @@ function NotificationItem({ notification }) {
               color: 'text.disabled',
             }}
           >
-            <Iconify icon="eva:clock-outline" sx={{ mr: 0.5, width: 16, height: 16 }} />
             {fToNow(notification.createdAt)}
           </Typography>
         }
@@ -253,7 +242,7 @@ function renderContent(notification) {
   }
   if (notification.type === 'order_shipped') {
     return {
-      avatar: <img alt={notification.title} src="/assets/icons/ic_notification_shipping.svg" />,
+      avatar: <img alt={notification.title} />,
       title,
     };
   }

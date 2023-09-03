@@ -77,16 +77,16 @@ const LeaveApplicationForm = () => {
   };
 
   return (
-    <Box m={{ xs: 0, sm: 4 }} display="flex" width={{xs:'100%', sm:'70%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
+    <Box m={{ xs: 3, sm: 4 }} display="flex" width={{xs:'99%', sm:'96%', md:'90%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
     sx={{
         boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
         borderRadius: "8px",
         padding: "16px",
     }}>
-      <Box display="flex" justifyContent="center" alignItems="center">
+      <Box display="flex" justifyContent="center" alignItems="center" textAlign="center">
         <Header
           title="Leave Application Form"
-          subtitle="Input your details below to begin your leave application process." sx={{alignItems: "center"}}
+          subtitle="Input your details below to begin your leave application process." sx={{alignItems: "center",}}
         />
       </Box>
       <Box
@@ -106,7 +106,7 @@ const LeaveApplicationForm = () => {
           </Typography>
 
           <Grid container spacing={2} mt={1}>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 label="First Name"
                 variant="outlined"
@@ -117,13 +117,23 @@ const LeaveApplicationForm = () => {
                 required
               />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <TextField
                 label="Last Name"
                 variant="outlined"
                 fullWidth
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </Grid>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                label="Email"
+                variant="outlined"
+                fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </Grid>
@@ -137,17 +147,7 @@ const LeaveApplicationForm = () => {
                 required
               />
             </Grid>
-            <Grid item xs={6}>
-              <TextField
-                label="Email"
-                variant="outlined"
-                fullWidth
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </Grid>
-            <Grid item xs={12} display="flex" gap={2}>
+            <Grid item xs={12} display="flex" justifyContent='space-between' gap={2}>
               <TextField
                 label="Job Position"
                 variant="outlined"
@@ -249,7 +249,7 @@ const LeaveApplicationForm = () => {
                   size="small"
                   variant="outlined"
                   color="primary"
-                  sx={{ textTransform: "revert" }}
+                  sx={{ textTransform: "revert", mt: 1 }}
                 >
                   Attach Supporting Documents
                 </Button>

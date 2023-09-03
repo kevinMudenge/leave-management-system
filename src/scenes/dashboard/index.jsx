@@ -20,18 +20,18 @@ const Dashboard = () => {
   const colors = tokens(theme.palette.mode);
 
   return (
-    <Box mt={2} mx={3}>
+    <Box mx={3}>
       <Box display="flex" mt={2} mx={3}>
         <Header title="Hey You," />
       </Box>
       
       <Grid container spacing={2} mt={1} mb={2} mx={1}>
-        <Grid item xs={12} md={3} alignItems="flex-start">
+        <Grid item xs={12} sm={6} md={4} lg={3}  alignItems="flex-start">
           <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
             <Typography>Request for a Leave</Typography>
           </Button>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
           <StatBox
             title="On Leave"
             icon={<PeopleAltOutlinedIcon/>}
@@ -40,16 +40,16 @@ const Dashboard = () => {
             subtitle="Total Employees"
             />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
         <StatBox
             title="New Requests"
             icon={<TimelineOutlinedIcon/>}
             data="1"
-            subdata="5"
+            subdata="14"
             subtitle="Total Requests"
           />
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
            <StatBox
             title="Approved/Declined"
             icon={<BarChartOutlinedIcon/>}
@@ -73,7 +73,7 @@ const Dashboard = () => {
             <LeavetrackerTable />
           </Box>
         </Grid>
-        <Grid item xs={12} md={2}>
+        <Grid item xs={12} md={3}>
           <Box
             display="flex"
             justifyContent="space-between"
