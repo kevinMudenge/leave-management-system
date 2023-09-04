@@ -25,8 +25,8 @@ const Dashboard = () => {
         <Header title="Hey You," />
       </Box>
       
-      <Grid container spacing={2} mt={1} mb={2} mx={1}>
-        <Grid item xs={12} sm={6} md={4} lg={3}  alignItems="flex-start">
+      <Grid container mt={2} mb={2} mx={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3} alignItems='flex-start'>
           <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
             <Typography>Request for a Leave</Typography>
           </Button>
