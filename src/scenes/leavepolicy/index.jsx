@@ -18,8 +18,8 @@ const Leavepolicy = () => {
       "https://docs.google.com/document/d/1hrX-PEKmBhSv5o8WKESdG3ssOIir0qHi/edit?usp=sharing&ouid=106342101822357898565&rtpof=true&sd=trueF";
     return (
       <a href={documentUrl} target="_blank" rel="noopener noreferrer">
-        <Button variant="contained" color="primary" sx={{whiteSpace: 'nowrap'}}>
-          Read the Policy
+        <Button variant="contained" color="primary" sx={{whiteSpace: 'nowrap', borderRadius: "32px", textTransform: "revert"}}>
+          <Typography>Read the Policy</Typography>
         </Button>
       </a>
     );

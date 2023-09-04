@@ -144,7 +144,7 @@ export const themeSettings =(mode)=>{
             },
             subtitle: {
               fontFamily: ['Lato', '"Lucida Sans Unicode"', 'sans-serif'],
-              fontSize: 16,
+              fontSize: 14,
             },
             h1: {
               fontFamily: ['Roboto', 'Arial', 'sans-serif'],
