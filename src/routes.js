@@ -6,6 +6,7 @@ import Dashboard from "./scenes/dashboard";
 import Leaveappplication from "./scenes/leaveapplication";
 import Leavetracker from './scenes/leavetracker';
 import Leavepolicy from './scenes/leavepolicy';
+import Profile from './scenes/profile';
 
 import Leaveconfiguration from "./scenes/leaveconfiguration";
 import Report from './scenes/reports';
@@ -27,6 +28,9 @@ export default function Router() {
         { path: 'leaveconfiguration', element: <Leaveconfiguration /> },
         { path: 'report', element: <Report /> },
         { path: 'companystaff', element: <Staff /> },
+        { path: 'profile', element: <Profile /> },
+
+
 
       ],
     },

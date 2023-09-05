@@ -81,6 +81,7 @@ const LeaveApplicationForm = () => {
         boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
         borderRadius: "8px",
         padding: "16px",
+        height: "105nvh"
     }}>
       <Box display="flex" justifyContent="center" alignItems="center">
         <Header
@@ -248,6 +249,7 @@ const LeaveApplicationForm = () => {
                   size="small"
                   variant="outlined"
                   color="primary"
+                  
                   sx={{ textTransform: "revert" }}
                 >
                   Attach Supporting Documents
@@ -283,7 +285,7 @@ const LeaveApplicationForm = () => {
               size="small"
               sx={{
                 width: "100%",
-                borderRadius: "16px",
+                borderRadius: "11px",
                 minWidth: "64px",
                 textTransform: "revert",
                 mx: 1,

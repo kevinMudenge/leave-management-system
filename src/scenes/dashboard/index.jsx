@@ -22,12 +22,12 @@ const Dashboard = () => {
   return (
     <Box mt={2} mx={3}>
       <Box display="flex" mt={2} mx={3}>
-        <Header title="Hey You," />
+        <Header title="Munene," />
       </Box>
       
-      <Grid container spacing={2} mt={1} mb={2} mx={1}>
+      <Grid container spacing={0.2} mt={1} mb={2} mx={1}>
         <Grid item xs={12} md={3} alignItems="flex-start">
-          <Button variant="contained" sx={{ borderRadius: "32px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
+          <Button variant="contained" sx={{ borderRadius: "10px", textTransform: "revert" }} component={RouterLink} to="/dashboard/leaveapplication">
             <Typography>Request for a Leave</Typography>
           </Button>
         </Grid>
@@ -52,6 +52,15 @@ const Dashboard = () => {
         <Grid item xs={12} md={3}>
            <StatBox
             title="Approved/Declined"
+            icon={<BarChartOutlinedIcon/>}
+            data="12"
+            subdata="2"
+            subtitle="Requests Status"
+            />
+        </Grid>
+        <Grid item xs={12} md={3}>
+           <StatBox
+            title="Total Request"
             icon={<BarChartOutlinedIcon/>}
             data="12"
             subdata="2"

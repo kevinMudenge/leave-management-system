@@ -63,14 +63,27 @@ export default function Login() {
 
   return (<Box sx={{backgroundImage: 'url(../../assets/background.png)', backgroundRepeat: 'no-repeat', width: '100%'}}>
       <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
+      <Box
+    sx={{
+      backgroundImage: 'url(../../assets/background.png)',
+      backgroundRepeat: 'no-repeat',
+      width: '700px',
+      marginTop: 8,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
+      padding: "30px",
+      // backgroundColor: "#80d8ff", 
+    }}
+
         >
+          <img
+          src="https://sasapay.co.ke/images/logoo.png"
+          alt="Logo"
+          className="logo-image"
+          width="250px"
+        />
           <Avatar sx={{ m: 1, backgroundColor: '#e1e2fe'}}>
             <LockOutlinedIcon color="info"/>
           </Avatar>
