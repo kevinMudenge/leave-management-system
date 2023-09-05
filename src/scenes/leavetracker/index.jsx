@@ -101,7 +101,7 @@ export const LeavetrackerTable = () => {
 const Leavetracker = () => {
  
   return (
-    <Box my={{xs: 2, sm: 4}} mx={{ xs: 0, sm: 4 }} display="flex" width={{xs:'100%', sm:'98%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
+    <Box my={{xs: 2, sm: 4}} mx={{ xs: 0, sm: 4 }} display="flex" width={{xs:'99%', sm:'98%', md: '96%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
     sx={{
         boxShadow: "0px 3px 6px rgba(0, 0, 0, 0.5)",
         borderRadius: "8px",
