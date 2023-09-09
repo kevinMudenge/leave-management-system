@@ -170,7 +170,7 @@ const Topbar=() =>{
           
         </Box>
       
-        <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="ani ievn" variant="filled" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
+        <Chip color="info" icon={<AccountCircleOutlinedIcon />} sx={{cursor: "default"}} label="acc. settings" variant="filled" onDelete={handleClick} deleteIcon={<Tooltip title="Open settings" arrow placement="bottom-end"><ArrowDropDownIcon/></Tooltip>}/>
 
       </Box>
 
