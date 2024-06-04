@@ -1,70 +1,164 @@
-# Getting Started with Create React App
+# Leave Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Leave Management System is a web application developed using React that allows employees to apply for leave and managers to approve or reject leave requests. 
 
-In the project directory, you can run:
+It should also provide a comprehensive view of leave balances, types of leave, and leave history for both employees and administrators.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **User Authentication**: Secure login for employees and administrators.
+- **Leave Application**: Employees can apply for different types of leave.
+- **Leave Approval**: Managers can approve or reject leave requests.
+- **Leave Balance**: Employees can view their leave balance.
+- **Leave History**: Track leave history for individual employees.
+- **Responsive Design**: Accessible on both desktop and mobile devices.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **Frontend**: React, React Router
+- **Styling**: CSS, Material UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (version 14.x or later)
+- npm (version 6.x or later)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/leave-management-system.git
+cd leave-management-system
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Install Dependencies**
+```bash
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+3. **Run the application**
+```bash
+npm start
+```
+The application will be available at http://localhost:3000.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```plaintext
 
-## Learn More
+leave-management-system/
+├── public/
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── assets/
+│   │   ├── background.png
+│   │   └── logo.svg
+│   ├── components/
+│   │   ├── global/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── Topbar.jsx
+│   │   │   └── Copyright.jsx
+│   │   ├── sections/
+│   │   │   └── StatBox.jsx
+│   │   └── dashboardlayout/
+│   │       └── index.jsx
+│   ├── data/
+│   │   └── mockData.js
+│   ├── scenes/
+│   │   ├── auth/
+│   │   │   ├── ForgotPassword.jsx
+│   │   │   └── Login.jsx
+│   │   ├── companystaff/
+│   │   │   └── index.jsx
+│   │   ├── dashboard/
+│   │   │   └── index.jsx
+│   │   ├── leaveapplication/
+│   │   │   └── index.jsx
+│   │   ├── leaveconfiguration/
+│   │   │   └── index.jsx
+│   │   ├── leavepolicy/
+│   │   │   └── index.jsx
+│   │   ├── leavetracker/
+│   │   │   └── index.jsx
+│   │   └── reports/
+│   │       ├── bar/
+│   │       ├── calendar/
+│   │       ├── line/
+│   │       └── pie/
+│   │           └── index.jsx
+│   ├── App.js
+│   ├── index.js
+│   ├── routes.js
+│   ├── serviceWorker.js
+│   └── theme.js
+├── .gitignore
+├── README.md
+├── package-lock.json
+└── package.json
+```
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We welcome contributions to improve the Leave Management System. Please follow these steps to contribute:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Fork the repository.
+    Create a new branch.
+    Make your changes and commit them.
+    Push to your fork and submit a pull request.
 
-### Code Splitting
+## Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+If you have any questions or feedback, please reach out to us at:
 
-### Analyzing the Bundle Size
+[![Gmail](https://img.shields.io/badge/kevnMudenge-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mudengekevn254@gmail.com) [![Gmail](https://img.shields.io/badge/BrianMunene-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:brianmunene11@gmail.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Change Log
 
-### Making a Progressive Web App
+auth
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    Fixed sidebar, statbox, did some stuff, overall looks good
+    Sep 1, 2023
 
-### Advanced Configuration
+companystaff
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+    Added responsiveness and maintained consistency
+    Sep 3, 2023
 
-### Deployment
+dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+    Set groundwork for the development of leave configuration and fixed some issues
+    Sep 4, 2023
 
-### `npm run build` fails to minify
+leaveapplication
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+    Added responsiveness and maintained consistency
+    Sep 3, 2023
+
+leaveconfiguration
+
+    Set groundwork for the development of leave configuration and fixed some issues
+    Sep 4, 2023
+
+leavepolicy
+
+    Set groundwork for the development of leave configuration and fixed some issues
+    Sep 4, 2023
+
+leavetracker
+
+    Added responsiveness and maintained consistency
+    Sep 3, 2023
+
+reports
+
+    Initial setup and configuration
+    Sep 4, 2023
+
+
