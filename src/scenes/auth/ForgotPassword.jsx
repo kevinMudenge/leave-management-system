@@ -5,7 +5,7 @@ import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
 import ContactSupportOutlinedIcon from '@mui/icons-material/ContactSupportOutlined';
 import TaskAltOutlinedIcon from '@mui/icons-material/TaskAltOutlined';
 
-import Copyright from '../../components/global/copyright';
+import Copyright from '../../components/global/Copyright';
 
 
 

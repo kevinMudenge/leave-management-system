@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { tokens } from "../../theme";
 import { Button } from "@mui/material";
-import Copyright from "../../components/global/copyright"
+import Copyright from "../../components/global/Copyright"
 
 const Leavepolicy = () => {
   const theme = useTheme();

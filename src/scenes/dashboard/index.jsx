@@ -5,7 +5,7 @@ import { mockTransactions } from "../../data/mockData";
 
 import { tokens } from "../../theme";
 import Header from "../../components/global/Header";
-import Copyright from '../../components/global/copyright';
+import Copyright from '../../components/global/Copyright';
 import StatBox from "../../components/sections/StatBox";
 import { LeavetrackerTable } from "../leavetracker/index"
 

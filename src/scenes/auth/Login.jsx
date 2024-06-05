@@ -13,7 +13,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Container from '@mui/material/Container';
 
 import ForgotPassword from "./ForgotPassword";
-import Copyright from '../../components/global/copyright';
+import Copyright from '../../components/global/Copyright';
 
 
 export default function Login() {

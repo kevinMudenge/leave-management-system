@@ -4,7 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataContacts } from "../../data/mockData";
 import Header from "../../components/global/Header";
 import { useTheme } from "@mui/material";
-import Copyright from "../../components/global/copyright"
+import Copyright from "../../components/global/Copyright"
 
 export const LeavetrackerTable = () => {
   const theme = useTheme();

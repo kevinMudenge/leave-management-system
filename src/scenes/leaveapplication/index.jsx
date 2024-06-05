@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 
 import Header from "../../components/global/Header";
-import Copyright from "../../components/global/copyright";
+import Copyright from "../../components/global/Copyright";
 import {tokens} from "../../theme";
 
 const LeaveApplicationForm = () => {
