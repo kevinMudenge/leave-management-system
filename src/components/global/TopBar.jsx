@@ -21,7 +21,7 @@ import Logo from '../../assets/logo.svg';
 
 
 
-const Topbar=() =>{
+const TopBar=() =>{
   const theme = useTheme();
   const colors= tokens(theme.palette.mode);
   const location = useLocation();
@@ -212,4 +212,4 @@ const Topbar=() =>{
     </Box>
   }
 
-export default Topbar;
+export default TopBar;

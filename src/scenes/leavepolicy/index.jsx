@@ -9,7 +9,7 @@ import { tokens } from "../../theme";
 import { Button } from "@mui/material";
 import Copyright from "../../components/global/Copyright"
 
-const Leavepolicy = () => {
+const LeavePolicy = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -125,4 +125,4 @@ const Leavepolicy = () => {
   );
 };
 
-export default Leavepolicy;
+export default LeavePolicy;

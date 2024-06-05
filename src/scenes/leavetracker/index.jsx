@@ -6,7 +6,7 @@ import Header from "../../components/global/Header";
 import { useTheme } from "@mui/material";
 import Copyright from "../../components/global/Copyright"
 
-export const LeavetrackerTable = () => {
+export const LeaveTrackerTable = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -98,7 +98,7 @@ export const LeavetrackerTable = () => {
 };
 
 
-const Leavetracker = () => {
+const LeaveTracker = () => {
  
   return (
     <Box my={{xs: 2, sm: 4}} mx={{ xs: 0, sm: 4 }} display="flex" width={{xs:'99%', sm:'98%', md: '96%'}} justifyContent="center" flexDirection="column" alignItems="center" alignSelf="center"
@@ -119,4 +119,4 @@ const Leavetracker = () => {
   );
 };
 
-export default Leavetracker;
+export default LeaveTracker;

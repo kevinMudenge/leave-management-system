@@ -20,7 +20,7 @@ import { tokens } from '../../theme';
 
 
 
-const Sidebar = () => {
+const SideBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const theme = useTheme();
@@ -169,4 +169,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

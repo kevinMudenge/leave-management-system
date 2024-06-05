@@ -3,7 +3,7 @@ import Header from '../../components/global/Header';
 
 
 
-const Leaveconfiguration=()=>{
+const LeaveConfiguration=()=>{
 
 
     return <Box m={{ xs: 3, sm: 4 }} display="flex" width={{xs:'99%', sm:'98%', md: '96%'}} justifyContent="center" flexDirection="column" alignSelf="center"
@@ -21,4 +21,4 @@ const Leaveconfiguration=()=>{
     </Box>
 }
 
-export default Leaveconfiguration;
+export default LeaveConfiguration;
