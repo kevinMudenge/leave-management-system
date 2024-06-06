@@ -112,7 +112,7 @@ const LeaveTracker = () => {
         subtitle="Track your requested leaves here"
       />
       <Box width="100%">
-      <LeavetrackerTable />
+      <LeaveTrackerTable />
       </Box>
       <Copyright sx={{ mt: 2, mb: 4 }} />
     </Box>
