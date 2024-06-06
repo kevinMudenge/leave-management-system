@@ -15,7 +15,7 @@ const LeaveConfiguration=()=>{
         <Box mt={2} display="flex" justifyContent="space-between" alignItems="center">
             <Header title="Leave Configurations" subtitle="Company leave configuration desk"/>
                 <Button variant="contained" sx={{ borderRadius: "32px", whiteSpace: 'nowrap', textTransform: 'revert' }}>
-                    <Typography>Add A New Configuration</Typography>
+                    <Typography p={2}>Add A New Configuration</Typography>
                 </Button>
         </Box>
     </Box>

@@ -15,9 +15,13 @@ It should also provide a comprehensive view of leave balances, types of leave, a
 - **Leave History**: Track leave history for individual employees.
 - **Responsive Design**: Accessible on both desktop and mobile devices.
 
+-**HR Functionalities** Leave Configurations, People Excellence(Staff, renamed to user preference), leave calender, company charts.
+
+UI/UX, Light mode, dark mode, responsive topbar and sidebar across various screens
+
 ## Technologies Used
 
-- **Frontend**: React, React Router
+- **Frontend**: React
 - **Styling**: CSS, Material UI
 
 ## Getting Started
@@ -31,7 +35,7 @@ It should also provide a comprehensive view of leave balances, types of leave, a
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/yourusername/leave-management-system.git
+git clone https://github.com/kevinMudenge/leave-management-system.git
 cd leave-management-system
 ```
 
@@ -106,7 +110,8 @@ leave-management-system/
 ```
 ## Contributing
 
-We welcome contributions to improve the Leave Management System. Please follow these steps to contribute:
+We welcome contributions to improve the Leave Management System. It was discontinued for whatever reasons.
+Please follow these steps to contribute:
 
     Fork the repository.
     Create a new branch.
@@ -125,6 +130,9 @@ auth
 
     Fixed sidebar, statbox, did some stuff, overall looks good
     Sep 1, 2023
+
+    included email validation to prevent invalid emails from reaching the back-end
+    June 6
 
 companystaff
 

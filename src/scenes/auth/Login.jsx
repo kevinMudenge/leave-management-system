@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import {Typography, Avatar, Modal} from "@mui/material";
-
+import { Typography, Avatar, Modal } from "@mui/material";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
@@ -15,41 +14,43 @@ import Container from '@mui/material/Container';
 import ForgotPassword from "./ForgotPassword";
 import Copyright from '../../components/global/Copyright';
 
-
 export default function Login() {
-
   const navigate = useNavigate();
   const [showPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
   const handleSubmit = (event) => {
-  event.preventDefault();
-  const data = new FormData(event.currentTarget);
-  const email = data.get('email');
-  const password = data.get('password');
-  
-  if (!email) {
-    setEmailError('Email is required.');
-  } else {
-    setEmailError('');
-  }
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = data.get('email');
+    const password = data.get('password');
 
-  if (!password) {
-    setPasswordError('Password is required.');
-  } else {
-    setPasswordError('');
-  }
-
-  if (email && password) {
-    console.log({
-      email: email,
-      password: password,
-    });
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // for email validation before data send
     
-    navigate('/dashboard', { replace: true });
-  }
-};
+    if (!email) {
+      setEmailError('Email is required.');
+    } else if (!emailRegex.test(email)) {
+      setEmailError('Enter a valid email address.');
+    } else { 
+      setEmailError('');
+    }
+
+    if (!password) {
+      setPasswordError('Password is required.');
+    } else {
+      setPasswordError('');
+    }
+
+    if (email && emailRegex.test(email) && password) {
+      console.log({
+        email: email,
+        password: password,
+      });
+      
+      navigate('/dashboard', { replace: true });
+    }
+  };
   
   const [forgotPasswordOpen, setForgotPasswordOpen] = useState(false);
 
@@ -61,7 +62,8 @@ export default function Login() {
     setForgotPasswordOpen(false);
   };
 
-  return (<Box sx={{backgroundImage: 'url(../../assets/background.png)', backgroundRepeat: 'no-repeat', width: '100%'}}>
+  return (
+    <Box sx={{ backgroundImage: 'url(../../assets/background.png)', backgroundRepeat: 'no-repeat', width: '100%' }}>
       <Container component="main" maxWidth="xs">
         <Box
           sx={{
@@ -71,8 +73,8 @@ export default function Login() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, backgroundColor: '#e1e2fe'}}>
-            <LockOutlinedIcon color="info"/>
+          <Avatar sx={{ m: 1, backgroundColor: '#e1e2fe' }}>
+            <LockOutlinedIcon color="info" />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -103,9 +105,9 @@ export default function Login() {
             />
 
             <Box width="100%" 
-            display="flex" 
-            mb={1}
-            justifyContent="space-around">
+              display="flex" 
+              mb={1}
+              justifyContent="space-around">
               <Link onClick={handleForgotPasswordOpen} variant="body2" sx={{ cursor: 'pointer', '&:hover': { color: '#b71c1c' } }} underline='hover'>
                 Forgot password?
               </Link>
@@ -133,6 +135,6 @@ export default function Login() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-      </Box>
+    </Box>
   );
 }

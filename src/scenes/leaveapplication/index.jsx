@@ -289,12 +289,12 @@ const LeaveApplicationForm = () => {
                 textTransform: "revert",
                 mx: 1,
                 mt: 2,
-                color: "#00B8D9", // Default text color
-                borderColor: "#00B8D9", // Default border color
+                color: "#00B8D9",
+                borderColor: "#00B8D9", 
                 "&:hover": {
-                  backgroundColor: "#00B8D9", // Background color on hover
-                  color: "#ffffff", // Text color on hover
-                  borderColor: "#00B8D9", // Border color on hover
+                  backgroundColor: "#00B8D9",
+                  color: "#ffffff",
+                  borderColor: "#00B8D9",
                 },
               }}
               color="info"
