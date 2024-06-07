@@ -90,14 +90,8 @@ leave-management-system/
 │   │   │   └── index.jsx
 │   │   ├── leavepolicy/
 │   │   │   └── index.jsx
-│   │   ├── leavetracker/
-│   │   │   └── index.jsx
-│   │   └── reports/
-│   │       ├── bar/
-│   │       ├── calendar/
-│   │       ├── line/
-│   │       └── pie/
-│   │           └── index.jsx
+│   │   └── leavetracker/
+│   │       └── index.jsx
 │   ├── App.js
 │   ├── index.js
 │   ├── routes.js
@@ -132,7 +126,7 @@ auth
     Sep 1, 2023
 
     included email validation to prevent invalid emails from reaching the back-end
-    June 6
+    June 6, 2024
 
 companystaff
 
@@ -148,6 +142,9 @@ leaveapplication
 
     Added responsiveness and maintained consistency
     Sep 3, 2023
+
+    Bug Noted, Select Reliever used data from select leaves, staged for review, will be fixed later.
+    June 7, 2024
 
 leaveconfiguration
 

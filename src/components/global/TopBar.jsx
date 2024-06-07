@@ -69,7 +69,7 @@ const TopBar=() =>{
               component={RouterLink}
               size="small"
               to="/dashboard"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto"}}
             >
               <GridViewOutlinedIcon />
@@ -84,7 +84,7 @@ const TopBar=() =>{
               component={RouterLink}
               to="/dashboard/leaveapplication"
               size="small"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto"}}
             >
               <FeedOutlinedIcon />
@@ -99,7 +99,7 @@ const TopBar=() =>{
               component={RouterLink}
               size="small"
               to="/dashboard/leavetracker"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto" }}
             >
               <HistoryToggleOffOutlinedIcon />
@@ -114,7 +114,7 @@ const TopBar=() =>{
               component={RouterLink}
               to="/dashboard/leavepolicy"
               size="small"
-              activeClassName="active-button"
+              activeclassname="active-button"
               sx={{ borderRadius: '32px', textTransform: 'revert', minWidth: "auto" }}
             >
               <PolicyOutlinedIcon />
